@@ -1,0 +1,7 @@
+# Site gerado pelo mkdocs build
+site/
+
+# Python e Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.cache/

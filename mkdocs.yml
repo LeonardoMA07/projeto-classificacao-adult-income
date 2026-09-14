@@ -1,0 +1,46 @@
+site_name: Classificação da Faixa de Renda de Adultos
+site_description: EDA e pré-processamento do dataset Adult Income Census para classificação de renda
+site_url: https://leonardoma07.github.io/projeto-classificacao-adult-income/
+repo_url: https://github.com/LeonardoMA07/projeto-classificacao-adult-income
+repo_name: LeonardoMA07/projeto-classificacao-adult-income
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+  features:
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Notebook (EDA e pré-processamento): projeto_adult_income_eda.ipynb
+
+plugins:
+  - search:
+      lang: pt
+  - mkdocs-jupyter:
+      include_source: true   # botão para baixar o .ipynb
+      execute: false         # usa os outputs já salvos no notebook
+      ignore_h1_titles: true # título da página vem do menu, não do H1 do notebook
+
+# O CSV fica na pasta docs/ só para o notebook ler; não é publicado no site.
+exclude_docs: |
+  *.csv
+
+markdown_extensions:
+  - tables
+  - admonition
+  - toc:
+      permalink: true

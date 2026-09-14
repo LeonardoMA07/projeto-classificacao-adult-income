@@ -1,0 +1,12 @@
+# Análise
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+jupyter
+
+# Site de documentação
+mkdocs
+mkdocs-material
+mkdocs-jupyter
