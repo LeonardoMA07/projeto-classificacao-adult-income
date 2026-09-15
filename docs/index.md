@@ -5,7 +5,6 @@
 | | |
 |---|---|
 | **Aluno** | Leonardo Moretti Alva |
-| **Data de entrega** | 13/09/2026 |
 | **Dataset** | [Adult Income Census](https://www.kaggle.com/datasets/anaghakp/adult-income-census), Kaggle |
 | **Notebook completo** | [EDA e pré-processamento](projeto_adult_income_eda.ipynb), com código, figuras e interpretações |
 | **Arquivo `.ipynb`** | [Ver no GitHub](https://github.com/LeonardoMA07/projeto-classificacao-adult-income/blob/main/docs/projeto_adult_income_eda.ipynb) |
