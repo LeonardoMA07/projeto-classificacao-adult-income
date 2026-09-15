@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Integrantes** | _[Nome 1]_ e _[Nome 2]_ |
+| **Aluno** | Leonardo Moretti Alva |
 | **Data de entrega** | 13/09/2026 |
 | **Dataset** | [Adult Income Census](https://www.kaggle.com/datasets/anaghakp/adult-income-census), Kaggle |
 | **Notebook completo** | [EDA e pré-processamento](projeto_adult_income_eda.ipynb), com código, figuras e interpretações |
