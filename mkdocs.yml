@@ -1,5 +1,5 @@
 site_name: Classificação da Faixa de Renda de Adultos
-site_description: EDA e pré-processamento do dataset Adult Income Census para classificação de renda
+site_description: EDA, pré-processamento e classificação do dataset Adult Income Census para prever a faixa de renda
 site_url: https://leonardoma07.github.io/projeto-classificacao-adult-income/
 repo_url: https://github.com/LeonardoMA07/projeto-classificacao-adult-income
 repo_name: LeonardoMA07/projeto-classificacao-adult-income
@@ -26,6 +26,7 @@ theme:
 nav:
   - Início: index.md
   - Notebook (EDA e pré-processamento): projeto_adult_income_eda.ipynb
+  - Notebook (Classificação): projeto_adult_income_classificacao.ipynb
 
 plugins:
   - search:

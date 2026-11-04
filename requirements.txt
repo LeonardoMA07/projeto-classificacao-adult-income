@@ -4,6 +4,7 @@ numpy
 matplotlib
 seaborn
 scikit-learn
+shap
 jupyter
 
 # Site de documentação
