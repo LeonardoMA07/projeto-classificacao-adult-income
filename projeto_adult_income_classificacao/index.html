@@ -627,17 +627,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Referências
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -922,17 +911,6 @@
     <span class="md-ellipsis">
       
         5. Conclusão
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Referências
       
     </span>
   </a>
@@ -1699,7 +1677,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li>Discussão crítica.</li>
 <li>Conclusão.</li>
 </ol>
-<p><strong>Ferramentas:</strong> Python com Pandas, NumPy, Matplotlib, Seaborn, scikit-learn (Pedregosa et al., 2011) e SHAP (Lundberg e Lee, 2017).</p>
+<p><strong>Ferramentas:</strong> Python com Pandas, NumPy, Matplotlib, Seaborn, scikit-learn e SHAP.</p>
 </div>
 </div>
 </div>
@@ -2071,7 +2049,7 @@ def resumo(grid):
 </tr>
 <tr>
 <td><strong>Random Forest</strong> (ensemble de árvores)</td>
-<td>Treina muitas árvores de decisão, cada uma com uma amostra <em>bootstrap</em> das linhas e um subconjunto aleatório de features por divisão; a previsão é a votação das árvores (<em>bagging</em>; Breiman, 2001)</td>
+<td>Treina muitas árvores de decisão, cada uma com uma amostra <em>bootstrap</em> das linhas e um subconjunto aleatório de features por divisão; a previsão é a votação das árvores (<em>bagging</em>)</td>
 <td>Captura relações não lineares e interações (ex.: casado <strong>e</strong> com ensino superior) sem criá-las à mão; a média de muitas árvores reduz o sobreajuste de uma árvore isolada</td>
 </tr>
 </tbody>
@@ -6348,7 +6326,7 @@ plt.show()</div>
 <li><strong><code>age</code> (0,118):</strong> a relação com a renda <strong>não é linear</strong>. A taxa de <code>&gt;50K</code> sobe de 2% (até 25 anos) para 40% (45 a 55 anos) e depois cai para 21% (acima de 65). A floresta captura esse "sobe e desce" com cortes em vários pontos; um modelo linear só enxerga uma inclinação única.</li>
 </ol>
 <p><strong>Comparação com a Regressão Logística:</strong> aqui as categorias raras não aparecem no topo. A importância por impureza depende de quantas pessoas cada divisão afeta, então uma coluna que vale 1 para 17 pessoas quase não reduz a impureza. Em 4º lugar está <code>relationship_Husband</code> (0,112), que equivale praticamente a "homem casado".</p>
-<p><strong>Cuidados na leitura:</strong> a importância por impureza não indica o <strong>sentido</strong> do efeito (por isso usamos SHAP a seguir) e tende a favorecer variáveis numéricas com muitos valores possíveis, como <code>age</code>, que oferecem mais pontos de corte (Strobl et al., 2007).</p>
+<p><strong>Cuidados na leitura:</strong> a importância por impureza não indica o <strong>sentido</strong> do efeito (por isso usamos SHAP a seguir) e tende a favorecer variáveis numéricas com muitos valores possíveis, como <code>age</code>, que oferecem mais pontos de corte.</p>
 </div>
 </div>
 </div>
@@ -6359,7 +6337,7 @@ plt.show()</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="33-shap-no-melhor-modelo">3.3 SHAP no melhor modelo<a class="anchor-link" href="#33-shap-no-melhor-modelo">¶</a></h3><p>O SHAP (Lundberg e Lee, 2017) distribui a previsão de cada pessoa entre as features, com base nos valores de Shapley da teoria dos jogos: <strong>previsão = valor base + soma das contribuições SHAP</strong>. O valor base é o ponto de partida da decomposição: em modelos de árvores, ele vem da distribuição das classes na raiz das árvores, ponderada pelo <code>class_weight</code>. Diferente da importância da Seção 3.2, o SHAP mostra o <strong>sentido</strong> do efeito e funciona para cada previsão individual.</p>
+<h3 id="33-shap-no-melhor-modelo">3.3 SHAP no melhor modelo<a class="anchor-link" href="#33-shap-no-melhor-modelo">¶</a></h3><p>O SHAP distribui a previsão de cada pessoa entre as features, com base nos valores de Shapley da teoria dos jogos: <strong>previsão = valor base + soma das contribuições SHAP</strong>. O valor base é o ponto de partida da decomposição: em modelos de árvores, ele vem da distribuição das classes na raiz das árvores, ponderada pelo <code>class_weight</code>. Diferente da importância da Seção 3.2, o SHAP mostra o <strong>sentido</strong> do efeito e funciona para cada previsão individual.</p>
 <p>Usamos o <code>TreeExplainer</code>, que calcula os valores exatos para modelos de árvores, em uma amostra aleatória de 200 pessoas do teste (o cálculo na Random Forest é lento; 200 pontos bastam para o padrão global). As contribuições se referem à probabilidade da classe <code>&gt;50K</code>. Nos gráficos, as numéricas aparecem com os valores originais (idade em anos etc.), e não padronizados, para facilitar a leitura.</p>
 </div>
 </div>
@@ -6785,16 +6763,16 @@ display(tabela_casos.set_index('caso').T)</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4-discussao-critica">4. Discussão crítica<a class="anchor-link" href="#4-discussao-critica">¶</a></h2><h3 id="41-limitacoes-do-melhor-modelo">4.1 Limitações do melhor modelo<a class="anchor-link" href="#41-limitacoes-do-melhor-modelo">¶</a></h3><p><strong>1. O modelo reproduz o viés de sexo dos dados, e simplesmente retirar a coluna <code>sex</code> não resolveria.</strong> O SHAP mostra que ser mulher reduz a probabilidade prevista, e a Seção 2.1 mostra o efeito: recall de 0,67 para mulheres contra 0,86 para homens. A solução ingênua seria retirar <code>sex</code> do pipeline, estratégia chamada de <em>fairness through unawareness</em>. Ela falha quando existem <strong>variáveis substitutas</strong> (<em>proxies</em>) (Barocas, Hardt e Narayanan, 2023). Aqui, <code>relationship</code> revela o sexo quase perfeitamente: na base (após remover duplicatas), dos 12.912 registros com <code>Husband</code>, 12.911 são homens, e dos 1.531 com <code>Wife</code>, 1.530 são mulheres. E <code>relationship_Husband</code> está entre as 4 features mais importantes do modelo. Tratar o problema de verdade exige escolher um critério formal de justiça, como a igualdade de oportunidade (mesmo recall entre os grupos; Hardt, Price e Srebro, 2016), e intervir no treino ou usar limiares diferentes por grupo.</p>
-<p><strong>2. As probabilidades não são calibradas e o limiar de 0,5 é arbitrário.</strong> As probabilidades estão infladas pelo <code>class_weight='balanced'</code>: com as classes igualadas no treino, a decomposição do SHAP parte de 0,5, e o modelo aponta <code>&gt;50K</code> para 37,9% das pessoas do teste (2.419 de 6.377, Seção 2), contra uma taxa real de 24%. Além disso, florestas aleatórias tendem a produzir probabilidades mal calibradas, afastadas de 0 e de 1 (Niculescu-Mizil e Caruana, 2005). Na prática, uma saída de 0,7 <strong>não</strong> significa 70% de chance de ganhar <code>&gt;50K</code>. Se o uso exigir probabilidades confiáveis, seria preciso calibrar o modelo (por exemplo, com <code>CalibratedClassifierCV</code>) e escolher o limiar pelo custo real de cada tipo de erro, em vez de fixá-lo em 0,5. Com precision de 0,53, por exemplo, quase metade dos alertas de <code>&gt;50K</code> é falsa.</p>
-<h3 id="42-limitacoes-dos-dados">4.2 Limitações dos dados<a class="anchor-link" href="#42-limitacoes-dos-dados">¶</a></h3><p><strong>1. Faltam variáveis importantes nesta versão do dataset.</strong> O <em>Adult</em> original da UCI tem 14 atributos, entre eles <code>capital-gain</code>, <code>capital-loss</code> e <code>hours-per-week</code> (Becker e Kohavi, 1996). A versão do Kaggle usada aqui tem só 11 e não traz essas três. São justamente variáveis ligadas diretamente à renda: rendimentos de investimentos e jornada de trabalho, que separa quem trabalha meio período de quem trabalha em tempo integral. Sem elas, o modelo depende de sinais indiretos, como estado civil e idade. A curva de aprendizado (Seção 1.5) mostra a consequência: treino e validação se estabilizam perto de 0,66–0,69, então o limite está na informação disponível, e não na quantidade de linhas. O Caso 3 do SHAP é um exemplo concreto.</p>
-<p><strong>2. Os dados são de 1994 e o limiar de renda é nominal.</strong> US$ 50 mil em 1994 equivalem a mais de US$ 100 mil em valores atuais, pela correção do índice de preços ao consumidor (calculadora de inflação do BLS). Em 30 anos também mudaram a participação feminina no mercado de trabalho, a escolaridade média e a remuneração de cada ocupação. O modelo aprendeu um retrato de 1994 e não pode ser aplicado diretamente a dados atuais. É um caso de <em>concept drift</em>: a relação entre as features e o alvo muda com o tempo (Gama et al., 2014). Ding et al. (2021) apontam essas limitações do <em>Adult</em> e propõem conjuntos de dados atualizados, extraídos do Censo americano recente, mostrando que os resultados dos modelos variam conforme o ano, o estado e o limiar de renda escolhido.</p>
-<h3 id="43-operacionalizacao-e-manutencao">4.3 Operacionalização e manutenção<a class="anchor-link" href="#43-operacionalizacao-e-manutencao">¶</a></h3><p><strong>1. Publicar o pipeline completo, versionado e documentado.</strong> Salvar <code>melhor_modelo</code> (pré-processamento + Random Forest) num único arquivo com <code>joblib</code>, junto com a versão do scikit-learn, a lista de colunas esperadas e as métricas de validação. Como o pré-processamento está dentro do pipeline, o uso em produção aplica exatamente as mesmas transformações do treino, sem código duplicado. Isso reduz a dívida técnica típica de sistemas de ML, em que manter o sistema custa mais que desenvolvê-lo (Sculley et al., 2015). O modelo deve ser acompanhado de um <em>model card</em> (Mitchell et al., 2019) com o uso pretendido, as métricas por grupo (Seção 2.1) e as limitações desta seção.</p>
+<h2 id="4-discussao-critica">4. Discussão crítica<a class="anchor-link" href="#4-discussao-critica">¶</a></h2><h3 id="41-limitacoes-do-melhor-modelo">4.1 Limitações do melhor modelo<a class="anchor-link" href="#41-limitacoes-do-melhor-modelo">¶</a></h3><p><strong>1. O modelo reproduz o viés de sexo dos dados, e simplesmente retirar a coluna <code>sex</code> não resolveria.</strong> O SHAP mostra que ser mulher reduz a probabilidade prevista, e a Seção 2.1 mostra o efeito: recall de 0,67 para mulheres contra 0,86 para homens. A solução ingênua seria retirar <code>sex</code> do pipeline, estratégia chamada de <em>fairness through unawareness</em>. Ela falha quando existem <strong>variáveis substitutas</strong> (<em>proxies</em>). Aqui, <code>relationship</code> revela o sexo quase perfeitamente: na base (após remover duplicatas), dos 12.912 registros com <code>Husband</code>, 12.911 são homens, e dos 1.531 com <code>Wife</code>, 1.530 são mulheres. E <code>relationship_Husband</code> está entre as 4 features mais importantes do modelo. Tratar o problema de verdade exige escolher um critério formal de justiça, como a igualdade de oportunidade (mesmo recall entre os grupos), e intervir no treino ou usar limiares diferentes por grupo.</p>
+<p><strong>2. As probabilidades não são calibradas e o limiar de 0,5 é arbitrário.</strong> As probabilidades estão infladas pelo <code>class_weight='balanced'</code>: com as classes igualadas no treino, a decomposição do SHAP parte de 0,5, e o modelo aponta <code>&gt;50K</code> para 37,9% das pessoas do teste (2.419 de 6.377, Seção 2), contra uma taxa real de 24%. Além disso, florestas aleatórias tendem a produzir probabilidades mal calibradas, afastadas de 0 e de 1. Na prática, uma saída de 0,7 <strong>não</strong> significa 70% de chance de ganhar <code>&gt;50K</code>. Se o uso exigir probabilidades confiáveis, seria preciso calibrar o modelo (por exemplo, com <code>CalibratedClassifierCV</code>) e escolher o limiar pelo custo real de cada tipo de erro, em vez de fixá-lo em 0,5. Com precision de 0,53, por exemplo, quase metade dos alertas de <code>&gt;50K</code> é falsa.</p>
+<h3 id="42-limitacoes-dos-dados">4.2 Limitações dos dados<a class="anchor-link" href="#42-limitacoes-dos-dados">¶</a></h3><p><strong>1. Faltam variáveis importantes nesta versão do dataset.</strong> O <em>Adult</em> original da UCI tem 14 atributos, entre eles <code>capital-gain</code>, <code>capital-loss</code> e <code>hours-per-week</code>. A versão do Kaggle usada aqui tem só 11 e não traz essas três. São justamente variáveis ligadas diretamente à renda: rendimentos de investimentos e jornada de trabalho, que separa quem trabalha meio período de quem trabalha em tempo integral. Sem elas, o modelo depende de sinais indiretos, como estado civil e idade. A curva de aprendizado (Seção 1.5) mostra a consequência: treino e validação se estabilizam perto de 0,66–0,69, então o limite está na informação disponível, e não na quantidade de linhas. O Caso 3 do SHAP é um exemplo concreto.</p>
+<p><strong>2. Os dados são de 1994 e o limiar de renda é nominal.</strong> US$ 50 mil em 1994 equivalem a mais de US$ 100 mil em valores atuais, pela correção do índice de preços ao consumidor americano. Em 30 anos também mudaram a participação feminina no mercado de trabalho, a escolaridade média e a remuneração de cada ocupação. O modelo aprendeu um retrato de 1994 e não pode ser aplicado diretamente a dados atuais. É um caso de <em>concept drift</em>: a relação entre as features e o alvo muda com o tempo.</p>
+<h3 id="43-operacionalizacao-e-manutencao">4.3 Operacionalização e manutenção<a class="anchor-link" href="#43-operacionalizacao-e-manutencao">¶</a></h3><p><strong>1. Publicar o pipeline completo, versionado e documentado.</strong> Salvar <code>melhor_modelo</code> (pré-processamento + Random Forest) num único arquivo com <code>joblib</code>, junto com a versão do scikit-learn, a lista de colunas esperadas e as métricas de validação. Como o pré-processamento está dentro do pipeline, o uso em produção aplica exatamente as mesmas transformações do treino, sem código duplicado. Isso reduz a dívida técnica típica de sistemas de ML, em que manter o sistema custa mais que desenvolvê-lo. O modelo deve ser acompanhado de um <em>model card</em> com o uso pretendido, as métricas por grupo (Seção 2.1) e as limitações desta seção.</p>
 <p><strong>2. Monitorar os dados e o desempenho e retreinar periodicamente.</strong> Em produção, é preciso:</p>
 <ul>
 <li>comparar a distribuição das features novas com a do treino: média de idade e de escolaridade, proporção de pessoas nas colunas <code>infrequent</code> e frequência da categoria <code>Inválido</code>, que vem de um erro do arquivo e não deveria aparecer em dados novos. Se a coleta for corrigida, o modelo precisa ser retreinado sem ela;</li>
 <li>quando a renda real for conhecida, recalcular F1, recall e precision, no geral e <strong>por sexo e raça</strong>;</li>
-<li>retreinar com dados recentes quando houver queda de desempenho ou mudança nas distribuições, como recomendado para <em>concept drift</em> (Gama et al., 2014; Sculley et al., 2015).</li>
+<li>retreinar com dados recentes quando houver queda de desempenho ou mudança nas distribuições, como se recomenda para sistemas sujeitos a <em>concept drift</em>.</li>
 </ul>
 </div>
 </div>
@@ -6839,32 +6817,6 @@ display(tabela_casos.set_index('caso').T)</div>
 <li>Nos três métodos de interpretação, as variáveis que mais pesam são estado civil (casado), escolaridade, idade e papel na família (<code>Husband</code>). Na Regressão Logística, os maiores coeficientes são de categorias raríssimas, o que é instabilidade, e não importância.</li>
 <li>As principais limitações são o viés de sexo, que remover a coluna não resolveria por causa de <code>relationship</code>, e a ausência de ganho de capital e de horas trabalhadas nesta versão dos dados, que limita o desempenho.</li>
 <li><strong>Próximos passos:</strong> ajustar o limiar de decisão e calibrar as probabilidades; medir e tratar critérios formais de justiça; testar outros ensembles, como <em>gradient boosting</em>; usar uma versão dos dados com todas as variáveis do Censo.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16c5f347">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="referencias">Referências<a class="anchor-link" href="#referencias">¶</a></h2><ul>
-<li>Barocas, S.; Hardt, M.; Narayanan, A. (2023). <em>Fairness and Machine Learning: Limitations and Opportunities</em>. MIT Press. <a href="https://fairmlbook.org">https://fairmlbook.org</a></li>
-<li>Becker, B.; Kohavi, R. (1996). <em>Adult</em> [Dataset]. UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C5XW20">https://doi.org/10.24432/C5XW20</a></li>
-<li>Breiman, L. (2001). Random Forests. <em>Machine Learning</em>, 45(1), 5–32. <a href="https://doi.org/10.1023/A:1010933404324">https://doi.org/10.1023/A:1010933404324</a></li>
-<li>Ding, F.; Hardt, M.; Miller, J.; Schmidt, L. (2021). Retiring Adult: New Datasets for Fair Machine Learning. <em>Advances in Neural Information Processing Systems 34 (NeurIPS 2021)</em>.</li>
-<li>Gama, J.; Žliobaitė, I.; Bifet, A.; Pechenizkiy, M.; Bouchachia, A. (2014). A survey on concept drift adaptation. <em>ACM Computing Surveys</em>, 46(4), 1–37. <a href="https://doi.org/10.1145/2523813">https://doi.org/10.1145/2523813</a></li>
-<li>Hardt, M.; Price, E.; Srebro, N. (2016). Equality of Opportunity in Supervised Learning. <em>Advances in Neural Information Processing Systems 29 (NeurIPS 2016)</em>.</li>
-<li>Lundberg, S. M.; Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions. <em>Advances in Neural Information Processing Systems 30 (NIPS 2017)</em>.</li>
-<li>Mitchell, M. et al. (2019). Model Cards for Model Reporting. <em>Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* '19)</em>, 220–229. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a></li>
-<li>Niculescu-Mizil, A.; Caruana, R. (2005). Predicting Good Probabilities with Supervised Learning. <em>Proceedings of the 22nd International Conference on Machine Learning (ICML 2005)</em>, 625–632. <a href="https://doi.org/10.1145/1102351.1102430">https://doi.org/10.1145/1102351.1102430</a></li>
-<li>Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. <em>Journal of Machine Learning Research</em>, 12, 2825–2830.</li>
-<li>Sculley, D. et al. (2015). Hidden Technical Debt in Machine Learning Systems. <em>Advances in Neural Information Processing Systems 28 (NIPS 2015)</em>.</li>
-<li>Strobl, C.; Boulesteix, A.-L.; Zeileis, A.; Hothorn, T. (2007). Bias in random forest variable importance measures: Illustrations, sources and a solution. <em>BMC Bioinformatics</em>, 8, 25. <a href="https://doi.org/10.1186/1471-2105-8-25">https://doi.org/10.1186/1471-2105-8-25</a></li>
-<li>U.S. Bureau of Labor Statistics. <em>CPI Inflation Calculator</em>. <a href="https://www.bls.gov/data/inflation_calculator.htm">https://www.bls.gov/data/inflation_calculator.htm</a></li>
-<li><a href="https://www.kaggle.com/datasets/anaghakp/adult-income-census">Adult Income Census</a>, Kaggle.</li>
 </ul>
 </div>
 </div>
