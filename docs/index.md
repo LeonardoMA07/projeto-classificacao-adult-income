@@ -129,7 +129,4 @@ requirements.txt                  # bibliotecas usadas
 
 ## Referências
 
-- Becker, B. e Kohavi, R. (1996). *Adult* [Dataset]. UCI Machine Learning Repository. [https://doi.org/10.24432/C5XW20](https://doi.org/10.24432/C5XW20)
-- [Adult Income Census](https://www.kaggle.com/datasets/anaghakp/adult-income-census), Kaggle.
-- Documentação do [Pandas](https://pandas.pydata.org/docs/), [Scikit-learn](https://scikit-learn.org/stable/), [Seaborn](https://seaborn.pydata.org/), [Matplotlib](https://matplotlib.org/stable/) e [SHAP](https://shap.readthedocs.io/).
-- As referências da discussão crítica da Etapa 2 (Barocas et al., 2023; Ding et al., 2021; Lundberg e Lee, 2017, entre outras) estão no final do [notebook de classificação](projeto_adult_income_classificacao.ipynb).
+- Becker, B. e Kohavi, R. (1996). *Adult* [Dataset]. UCI Machine Learning Repository. [https://doi.org/10.24432/C5XW20](https://doi.org/10.24432/C5XW20) — versão usada aqui: [Adult Income Census](https://www.kaggle.com/datasets/anaghakp/adult-income-census), Kaggle.
